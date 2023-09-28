@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <menuitem id="hr_hospital_menu_root"
+              name="Doctor"
+              sequence="300"
+    />
+    <menuitem id="hr_hospital_catalog_menu"
+              parent="hr_hospital_menu_root"
+              name="Catalog"
+              sequence="100"
+    />
+    <menuitem id="hr_hospital_settings_menu_root"
+              parent="hr_hospital_menu_root"
+              name="Settings"
+              sequence="9999"
+    />
+</odoo>
