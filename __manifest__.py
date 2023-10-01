@@ -2,9 +2,7 @@
 {
     'name': "Hospital",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': "Manage Hospital",
 
     'description': """
         Long description of module's purpose
@@ -27,6 +25,9 @@
         'security/ir.model.access.csv',
         'views/menu.xml',
         'views/doctor.xml',
+        'views/patient.xml',
+        'views/disease.xml',
+        'views/visits.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

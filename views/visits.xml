@@ -1,43 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <record id="hr_hospital_doctor_tree" model="ir.ui.view">
-        <field name="name">hr.hospital.doctor.tree</field>
-        <field name="model">hr.hospital.doctor</field>
+    <record id="hr_hospital_visits_tree" model="ir.ui.view">
+        <field name="name">hr.hospital.visits.tree</field>
+        <field name="model">hr.hospital.visits</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="visits"/>
             </tree>
         </field>
     </record>
 
-    <record id="hr_hospital_doctor_form" model="ir.ui.view">
-        <field name="name">hr.hospital.doctor.form</field>
-        <field name="model">hr.hospital.doctor</field>
+    <record id="hr_hospital_visits_form" model="ir.ui.view">
+        <field name="name">hr.hospital.visits.form</field>
+        <field name="model">hr.hospital.visits</field>
         <field name="arch" type="xml">
             <form>
                 <header></header>
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="visits"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <record id="hr_hospital_doctor_act_window" model="ir.actions.act_window">
-        <field name="name">Doctor</field>
+    <record id="hr_hospital_visits_act_window" model="ir.actions.act_window">
+        <field name="name">Type of visits</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">hr.hospital.doctor</field>
+        <field name="res_model">hr.hospital.visits</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
     <menuitem
-            id="hr_hospital_doctor_menu"
-            action="hr_hospital_doctor_act_window"
+            id="hr_hospital_visits_menu"
+            action="hr_hospital_visits_act_window"
             parent="hr_hospital_menu_root"
-            name="Doctor" sequence="200"/>
+            name="Visits" sequence="200"/>
 
 </odoo>
