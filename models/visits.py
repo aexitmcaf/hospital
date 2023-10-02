@@ -10,4 +10,4 @@ class Visits(models.Model):
     _description = 'Visits'
 
     name = fields.Char()
-    visits = fields.Char()
+    visits = fields.Integer()
