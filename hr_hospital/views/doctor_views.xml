@@ -2,7 +2,7 @@
 
 <odoo>
     <record id="hr_hospital_doctor_tree" model="ir.ui.view">
-        <field name="name">hr.hospital.doctor.tree</field>
+        <field name="name">hr.hospital.doctor.tree()</field>
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
             <tree>

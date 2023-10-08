@@ -2,8 +2,15 @@
 
 <odoo>
     <menuitem id="hr_hospital_menu_root"
+              web_icon="hr_hospital, static/description/icon.png"
               name="Hospital"
               sequence="300"
+    />
+
+    <menuitem id="hr_hospital_lists_menu"
+              name="Lists"
+              parent="hr_hospital_menu_root"
+
     />
 
     <menuitem id="hr_hospital_settings_menu_root"

@@ -5,5 +5,5 @@ class Visits(models.Model):
     _name = 'hr.hospital.visit'
     _description = 'Hospital Patient Visits'
 
-    name = fields.Char()
+    date = fields.Datetime()
     visit_number = fields.Integer()
