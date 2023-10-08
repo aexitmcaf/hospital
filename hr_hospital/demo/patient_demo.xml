@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo noupdate="1">
+        <record id="demo_patient1" model="hr.hospital.patient">
+            <field name="name">Jimmy</field>
+        </record>
+        <record id="demo_patient2" model="hr.hospital.patient">
+            <field name="name">Bimmy</field>
+        </record>
+        <record id="demo_patient3" model="hr.hospital.patient">
+            <field name="name">John</field>
+        </record>
+        <record id="demo_patient4" model="hr.hospital.patient">
+            <field name="name">Jack</field>
+        </record>
+        <record id="demo_patient5" model="hr.hospital.patient">
+            <field name="name">Tom</field>
+        </record>
+</odoo>

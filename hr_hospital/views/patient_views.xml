@@ -36,11 +36,9 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
     <menuitem
             id="hr_hospital_patient_menu"
             action="hr_hospital_patient_act_window"
             parent="hr_hospital_menu_root"
             name="Patient" sequence="200"/>
-
 </odoo>

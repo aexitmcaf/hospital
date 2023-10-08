@@ -1,31 +1,29 @@
 {
     'name': "Hospital",
-
     'summary': "Manage Hospital",
 
-    'description': """
-        Long description of module's purpose
-    """,
-
-    'author': "My Company",
+    'author': "Oleksandr",
     'website': "https://www.yourcompany.com",
-    'category': 'Uncategorized',
-    'version': '0.1',
+    'category': "Customizations HR",
+    'license': 'OPL-1',
+    'version': '16.0.1.0.0',
 
-    # any module necessary for this one to work correctly
     'depends': ['base'],
+    # 'external_dependencies': {'python': [], },
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/menu.xml',
-        'views/doctor.xml',
-        'views/patient.xml',
-        'views/disease.xml',
-        'views/visits.xml',
+        'views/menu_views.xml',
+        'views/doctor_views.xml',
+        'views/patient_views.xml',
+        'views/disease_views.xml',
+        'views/visits_views.xml',
+        'data/disease_data.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        'demo/patient_demo.xml',
+        'demo/doctor_demo.xml',
     ],
 }
