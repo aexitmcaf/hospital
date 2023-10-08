@@ -1,0 +1,22 @@
+<odoo>
+    <data noupdate="1">
+        <record id="demo_doctor1" model="hr.hospital.doctor">
+            <field name="name">Dr.Odoo Sixteen</field>
+        </record>
+        <record id="demo_doctor2" model="hr.hospital.doctor">
+            <field name="name">Dr.Doodoo</field>
+        </record>
+        <record id="demo_doctor3" model="hr.hospital.doctor">
+            <field name="name">Dr.Neboodoo</field>
+        </record>
+        <record id="demo_doctor4" model="hr.hospital.doctor">
+            <field name="name">Dr.Boodoo</field>
+        </record>
+        <record id="demo_doctor5" model="hr.hospital.doctor">
+            <field name="name">Dr.Woodoo</field>
+        </record>
+        <record id="demo_doctor6" model="hr.hospital.doctor">
+            <field name="name">Dr.Woowoo</field>
+        </record>
+    </data>
+</odoo>
