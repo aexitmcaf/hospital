@@ -14,12 +14,14 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'data/disease_data.xml',
+
         'views/menu_views.xml',
-        'views/doctor_views.xml',
         'views/patient_views.xml',
+        'views/doctor_views.xml',
         'views/disease_views.xml',
         'views/visits_views.xml',
-        'data/disease_data.xml'
+        'views/diagnosis_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

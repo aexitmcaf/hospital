@@ -10,4 +10,7 @@
         <record id="disease_cold" model="hr.hospital.disease">
             <field name="name">Cold</field>
         </record>
+        <record id="disease_headaches" model="hr.hospital.disease">
+            <field name="name">Headaches</field>
+        </record>
 </odoo>

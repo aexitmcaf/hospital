@@ -20,9 +20,17 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="address"/>
+                        <field name="gender"/>
+                        <field name="phone"/>
+                        <field name="email"/>
+                        <field name="image"/>
+
+                        <field name="date_of_birth"/>
+                        <field name="age"/>
+                        <field name="passport_data"/>
+                        <field name="contact_person"/>
                         <field name="doctor_ids" witget="many2many_tags"/>
-                        <field name="disease_ids" witget="many2many_tags"/>
-                        <field name="visits_ids" witget="many2many_tags"/>
                     </group>
                 </sheet>
             </form>
@@ -40,5 +48,5 @@
             id="hr_hospital_patient_menu"
             action="hr_hospital_patient_act_window"
             parent="hr_hospital_menu_root"
-            name="Patient" sequence="200"/>
+            name="Patient" sequence="100"/>
 </odoo>

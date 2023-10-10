@@ -20,6 +20,13 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="address"/>
+                        <field name="gender"/>
+                        <field name="phone"/>
+                        <field name="age"/>
+                        <field name="email"/>
+                        <field name="image"/>
+                        <field name="specialty"/>
                     </group>
                 </sheet>
             </form>
