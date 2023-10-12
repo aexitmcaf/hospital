@@ -3,22 +3,6 @@ from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 
-class PersonMixin (models.AbstractModel):
-    _name = 'person.mixin'
-    _description = 'Hospital Person Mixin'
-
-    name = fields.Char(string='Patient Name', )
-    address = fields.Char(string='Address', required=True)
-    gender = fields.Selection([
-        ('male', 'Male'),
-        ('female', 'Female')
-    ], default="male", )
-    phone = fields.Char(string='Phone', )
-    age = fields.Integer(string='Age', )
-    email = fields.Char(string='Email', )
-    image = fields.Binary(string='Image', )
-
-
 class Patient(models.Model):
     _name = 'hr.hospital.patient'
     _description = 'Patient'
@@ -27,10 +11,10 @@ class Patient(models.Model):
     name = fields.Char()
     active = fields.Boolean(
         default=True, )
-    date_of_birth = fields.Char(string='Patient date of birth', )
+    date_of_birth = fields.Date(string='Patient date of birth', )
     passport_data = fields.Char(string='Patient Passport', )
     contact_person = fields.Char(string='Contact Person', )
-    doctor_ids = fields.Many2many(
+    doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor', )
 
     @api.constrains('age')

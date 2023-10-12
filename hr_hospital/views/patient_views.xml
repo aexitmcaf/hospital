@@ -7,6 +7,17 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="address"/>
+                <field name="gender"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="image"/>
+
+<!--                <field name="date_of_birth"/>-->
+                <field name="age"/>
+                <field name="passport_data"/>
+                <field name="contact_person"/>
+                <field name="doctor_id"/>
             </tree>
         </field>
     </record>
@@ -30,7 +41,7 @@
                         <field name="age"/>
                         <field name="passport_data"/>
                         <field name="contact_person"/>
-                        <field name="doctor_ids" witget="many2many_tags"/>
+                        <field name="doctor_id" witget="many2many_tags"/>
                     </group>
                 </sheet>
             </form>

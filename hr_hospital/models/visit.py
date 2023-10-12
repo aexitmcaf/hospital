@@ -2,10 +2,11 @@ from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 
-class Visits(models.Model):
+class Visit(models.Model):
     _name = 'hr.hospital.visit'
     _description = 'Hospital Patient Visits'
 
+    name = fields.Char(string='Patient Visits')
     date = fields.Datetime()
     visit_number = fields.Integer()
     start_time = fields.Datetime(string='Appointment time', default=fields.datetime.now())
