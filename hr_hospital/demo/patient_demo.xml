@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo noupdate="1">
-    <record id="demo_patient1" model="hr.hospital.patient">
-        <field name="name">Jimmy</field>
-        <field name="date_of_birth">15.12.2012</field>
-        <field name="age">27</field>
-        <field name="passport_data">KB123321</field>
-        <field name="contact_person">Maria</field>
-    </record>
-    <record id="demo_patient2" model="hr.hospital.patient">
-        <field name="name">Bimmy</field>
-    </record>
-    <record id="demo_patient3" model="hr.hospital.patient">
-        <field name="name">John</field>
-    </record>
-    <record id="demo_patient4" model="hr.hospital.patient">
-        <field name="name">Jack</field>
-    </record>
-    <record id="demo_patient5" model="hr.hospital.patient">
-        <field name="name">Tom</field>
-    </record>
+        <record id="patient1" model="hr.hospital.patient">
+            <field name="name">Fun</field>
+        </record>
+        <record id="patient2" model="hr.hospital.patient">
+            <field name="name">Man</field>
+        </record>
+        <record id="patient3" model="hr.hospital.patient">
+            <field name="name">One</field>
+        </record>
+        <record id="patient4" model="hr.hospital.patient">
+            <field name="name">Dan</field>
+        </record>
 </odoo>

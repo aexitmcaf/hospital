@@ -8,14 +8,16 @@ class Patient(models.Model):
     _description = 'Patient'
     _inherit = ['person.mixin']
 
-    name = fields.Char()
+    name = fields.Char(string="Patient name")
+
     active = fields.Boolean(
         default=True, )
     date_of_birth = fields.Date(string='Patient date of birth', )
     passport_data = fields.Char(string='Patient Passport', )
     contact_person = fields.Char(string='Contact Person', )
-    doctor_id = fields.Many2one(
-        comodel_name='hr.hospital.doctor', )
+
+    attending_doctor_id = fields.Many2one(comodel_name='hr.hospital.doctor', )
+    personal_doctor_ids = fields.One2many(comodel_name='hr.hospital.personal.doctor.change', inverse_name='patient_id')
 
     @api.constrains('age')
     def _check_patient_age(self):
@@ -36,3 +38,14 @@ class Patient(models.Model):
     #     comodel_name='hr.hospital.disease', )
     # visits_ids = fields.Many2many(
     #     comodel_name='hr.hospital.visit', )
+
+    def write(self, vals):
+        if 'attending_doctor_id' in vals:
+            for rec in self:
+                print(rec.id)
+                rec.write({
+                    'personal_doctor_ids': [(0, 0,
+                                             {'date': fields.datetime.now(),
+                                              'doctor_id': vals['attending_doctor_id'],
+                                              'patient_id': rec.id})]})
+                return super().write(vals)

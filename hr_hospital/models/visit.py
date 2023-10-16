@@ -12,6 +12,12 @@ class Visit(models.Model):
     start_time = fields.Datetime(string='Appointment time', default=fields.datetime.now())
     end_time = fields.Datetime(string='Appointment end', required=True,)
 
+    doctor_id = fields.Many2one(
+        comodel_name='hr.hospital.doctor', )
+
+    diagnosis_id = fields.Many2one(
+        comodel_name='hr.hospital.diagnosis', )
+
     @api.constrains('start_time', 'end_time')
     def _check_date_validation(self):
         for record in self:

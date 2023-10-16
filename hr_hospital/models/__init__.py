@@ -4,5 +4,7 @@ from . import (
     disease,
     visit,
     diagnosis,
-    doctor
+    doctor,
+    personal_doctor_change,
+    doctor_schedule
 )

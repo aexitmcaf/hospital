@@ -17,7 +17,7 @@
                 <field name="age"/>
                 <field name="passport_data"/>
                 <field name="contact_person"/>
-                <field name="doctor_id"/>
+                <field name="attending_doctor_id"/>
             </tree>
         </field>
     </record>
@@ -41,7 +41,7 @@
                         <field name="age"/>
                         <field name="passport_data"/>
                         <field name="contact_person"/>
-                        <field name="doctor_id" witget="many2many_tags"/>
+                        <field name="attending_doctor_id"/>
                     </group>
                 </sheet>
             </form>

@@ -22,6 +22,8 @@
         'views/disease_views.xml',
         'views/visits_views.xml',
         'views/diagnosis_views.xml',
+        'views/personal_doctor_change_views.xml',
+        'views/doctor_schedule_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="hr_hospital_personal_doctor_change" model="ir.ui.view">
+        <field name="name">hr.hospital.personal.doctor.change.tree</field>
+        <field name="model">hr.hospital.personal.doctor.change</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date"/>
+                <field name="patient_id"/>
+                <field name="attending_doctor_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_hospital_personal_doctor_change_act_window" model="ir.actions.act_window">
+        <field name="name">Personal doctor changes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.hospital.personal.doctor.change</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+     <menuitem
+            id="hr_hospital_personal_doctor_change_menu"
+            action="hr_hospital_personal_doctor_change_act_window"
+            parent="hr_hospital_menu_root"
+            name="History of personal doctor changes" sequence="200"/>
+</odoo>

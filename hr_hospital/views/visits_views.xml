@@ -8,6 +8,8 @@
             <tree>
                 <field name="date"/>
                 <field name="visit_number"/>
+                <field name="doctor_id"/>
+                <field name="diagnosis_id"/>
             </tree>
         </field>
     </record>
@@ -24,6 +26,8 @@
                         <field name="visit_number"/>
                         <field name="start_time"/>
                         <field name="end_time"/>
+                        <field name="doctor_id"/>
+                        <field name="diagnosis_id"/>
                     </group>
                 </sheet>
             </form>

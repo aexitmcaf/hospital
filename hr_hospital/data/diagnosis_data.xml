@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo noupdate="1">
+        <record id="covid_19" model="hr.hospital.diagnosis">
+            <field name="name">Covid-19</field>
+        </record>
+        <record id="bird_flu" model="hr.hospital.diagnosis">
+            <field name="name">Bird Flu</field>
+        </record>
+        <record id="pneumonia" model="hr.hospital.diagnosis">
+            <field name="name">Pneumonia</field>
+        </record>
+        <record id="migraine" model="hr.hospital.diagnosis">
+            <field name="name">Migraine</field>
+        </record>
+</odoo>

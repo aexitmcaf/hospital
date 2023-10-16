@@ -30,3 +30,4 @@ class Diagnosis(models.Model):
     def cron_done(self):
         self.search([('date', '<', fields.Date.today())]).write(
             {'state': 'done'})
+

@@ -3,6 +3,7 @@
 <odoo noupdate="1">
         <record id="demo_doctor1" model="hr.hospital.doctor">
             <field name="name">Dr.Odoo Sixteen</field>
+            <field name="specialty">Therapist</field>
         </record>
         <record id="demo_doctor2" model="hr.hospital.doctor">
             <field name="name">Dr.Doodoo</field>
