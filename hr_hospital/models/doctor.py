@@ -16,7 +16,17 @@ class Doctor(models.Model):
 
     @api.constrains('mentor_id')
     def _mentor_constrains(self):
-        check_mentor = self.search([('mentor_id.id', '!=', False)])
-        for rec in check_mentor:
-            if rec == self.mentor_id:
-                raise exceptions.ValidationError(_('Intern ' + rec.name + ' cannot be a mentor'))
+        for record in self:
+            if record.mentor_id._is_intern():
+                raise exceptions.ValidationError(_('Intern ' + record.mentor_id.name + ' cannot be a mentor'))
+            if record._is_mentor():
+                raise exceptions.ValidationError(_('Mentor ' + record.name + ' cannot be a mentor'))
+
+    def _is_intern(self):
+        for record in self:
+            return bool(record.mentor_id.id)
+
+    def _is_mentor(self):
+        for record in self:
+            check_count = self.search_count([('mentor_id.id', '=', record.id)])
+            return bool(check_count)

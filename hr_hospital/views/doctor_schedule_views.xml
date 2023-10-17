@@ -6,8 +6,8 @@
         <field name="model">hr.hospital.doctor.schedule</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="start_time"/>
-                <field name="end_time"/>
+                <field name="date_appointment" options='{"datepicker": {"daysOfWeekDisabled": [5,6]}}'/>
+                <field name="time_appointment"/>
                 <field name="doctor_assigned_id"/>
             </tree>
         </field>
@@ -21,8 +21,8 @@
                 <header></header>
                 <sheet>
                     <group>
-                        <field name="start_time"/>
-                        <field name="end_time"/>
+                        <field name="date_appointment" options='{"datepicker": {"daysOfWeekDisabled": [5,6]}}'/>
+                        <field name="time_appointment"/>
                         <field name="doctor_assigned_id"/>
                     </group>
                 </sheet>
