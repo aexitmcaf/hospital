@@ -13,7 +13,7 @@
                 <field name="email"/>
                 <field name="image"/>
 
-<!--                <field name="date_of_birth"/>-->
+                <!--                <field name="date_of_birth"/>-->
                 <field name="age"/>
                 <field name="passport_data"/>
                 <field name="contact_person"/>
@@ -43,6 +43,17 @@
                         <field name="contact_person"/>
                         <field name="attending_doctor_id"/>
                     </group>
+                    <notebook>
+                        <page name="doctors_history" string="Personal doctor change">
+                            <field name="personal_doctor_ids">
+                                <tree create="false" delete="false">
+                                    <field name="patient_id"/>
+                                    <field name="doctor_id"/>
+<!--                                    <field name="change_date"/>-->
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

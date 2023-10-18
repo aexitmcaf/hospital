@@ -1,4 +1,5 @@
 import re
+from datetime import datetime
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
@@ -16,6 +17,7 @@ class Patient(models.Model):
     passport_data = fields.Char(string='Patient Passport', )
     contact_person = fields.Char(string='Contact Person', )
 
+    doctor_id = fields.Many2one(comodel_name='hr.hospital.doctor', )
     attending_doctor_id = fields.Many2one(comodel_name='hr.hospital.doctor', )
     personal_doctor_ids = fields.One2many(comodel_name='hr.hospital.personal.doctor.change', inverse_name='patient_id')
 
@@ -39,13 +41,36 @@ class Patient(models.Model):
     # visits_ids = fields.Many2many(
     #     comodel_name='hr.hospital.visit', )
 
-    def write(self, vals):
-        if 'attending_doctor_id' in vals:
-            for rec in self:
-                print(rec.id)
-                rec.write({
-                    'personal_doctor_ids': [(0, 0,
-                                             {'date': fields.datetime.now(),
-                                              'doctor_id': vals['attending_doctor_id'],
-                                              'patient_id': rec.id})]})
-                return super().write(vals)
+    # def write(self, vals):
+    #     if 'attending_doctor_id' in vals:
+    #         for rec in self:
+    #             print(rec.id)
+    #             rec.write({
+    #                 'personal_doctor_ids': [(0, 0,
+    #                                          {'date': fields.datetime.now(),
+    #                                           'doctor_id': vals['attending_doctor_id'],
+    #                                           'patient_id': rec.id})]})
+    #             return super().write(vals)
+
+    @api.model
+    def create(self, vals_list: dict) -> dict:
+        result = super(Patient, self).create(vals_list)
+        if result:
+            self._history_change(result)
+        return result
+
+    def write(self, vals: dict) -> bool:
+        result = super().write(vals)
+        if result:
+            self._history_change()
+        return result
+
+    @api.model
+    def _history_change(self, val=None) -> None:
+        patients = val or self
+        for patient in patients:
+            self.env["hr.hospital.personal.doctor.change"].create({
+
+                'patient_id': patient.id,
+                'doctor_id': patient.doctor_id.id,
+            })

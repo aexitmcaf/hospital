@@ -6,9 +6,9 @@
         <field name="model">hr.hospital.personal.doctor.change</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="date"/>
+<!--                <field name="change_date"/>-->
                 <field name="patient_id"/>
-                <field name="attending_doctor_id"/>
+                <field name="doctor_id"/>
             </tree>
         </field>
     </record>
