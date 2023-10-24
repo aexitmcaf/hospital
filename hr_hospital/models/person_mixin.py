@@ -7,15 +7,12 @@ class PersonMixin(models.AbstractModel):
     _description = 'Hospital Person Mixin'
 
     name = fields.Char(string='Person Name', required=True, tracking=True)
-    active = fields.Boolean(
-        default=True, )
     address = fields.Char(string='Address')
     gender = fields.Selection(selection=[
         ('male', 'Male'),
         ('female', 'Female')
     ], default="male", )
     phone = fields.Char(string='Phone', required=True)
-    age = fields.Integer(string='Age', required=True)
     email = fields.Char(string='Email', required=True)
     image = fields.Binary(string='Image', )
 

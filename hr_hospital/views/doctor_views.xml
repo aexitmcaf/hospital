@@ -10,6 +10,10 @@
                 <field name="gender"/>
                 <field name="phone"/>
                 <field name="specialty"/>
+                <field name="is_mentor" attrs="{'invisible': [('is_intern', '=', True)]}"/>
+                <field name="is_intern" attrs="{'invisible': [('is_mentor', '=', True)]}"/>
+                <field name="parent_id"
+                       attrs="{'invisible': [('is_intern', '=', False)], 'required': [('is_intern', '=', True)]}"/>
             </tree>
         </field>
     </record>
@@ -19,18 +23,18 @@
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
             <form>
-                <header></header>
                 <sheet>
                     <group>
                         <field name="name"/>
-                        <field name="address"/>
-                        <field name="gender"/>
+                        <field name="state" invisible="1"/>
                         <field name="phone"/>
-                        <field name="age"/>
                         <field name="email"/>
                         <field name="image" widget="image"/>
                         <field name="specialty"/>
-                        <field name="mentor_id" widget="one2many_tags"/>
+                        <field name="is_mentor" attrs="{'invisible': [('is_intern', '=', True)]}"/>
+                        <field name="is_intern" attrs="{'invisible': [('is_mentor', '=', True)]}"/>
+                        <field name="parent_id" domain="[('is_mentor', '=', True)]"
+                               attrs="{'invisible': [('is_intern', '=', False)], 'required': [('is_intern', '=', True)]}"/>
                     </group>
                 </sheet>
             </form>

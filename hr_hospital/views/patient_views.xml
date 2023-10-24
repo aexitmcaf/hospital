@@ -6,6 +6,9 @@
         <field name="model">hr.hospital.patient</field>
         <field name="arch" type="xml">
             <tree>
+                <header>
+                    <button name="replace_patient_doctor" type="object" string="Replace doctor" class="oe_highlight"/>
+                </header>
                 <field name="name"/>
                 <field name="address"/>
                 <field name="gender"/>
@@ -17,7 +20,7 @@
                 <field name="age"/>
                 <field name="passport_data"/>
                 <field name="contact_person"/>
-                <field name="attending_doctor_id"/>
+                <field name="doctor_id"/>
             </tree>
         </field>
     </record>
@@ -41,7 +44,7 @@
                         <field name="age"/>
                         <field name="passport_data"/>
                         <field name="contact_person"/>
-                        <field name="attending_doctor_id"/>
+                        <field name="doctor_id"/>
                     </group>
                     <notebook>
                         <page name="doctors_history" string="Personal doctor change">

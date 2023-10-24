@@ -6,8 +6,12 @@
         <field name="name">hr.hospital.diagnosis.tree</field>
         <field name="model">hr.hospital.diagnosis</field>
         <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
+            <tree create="false">
+                <field name="diagnosis_date"/>
+                <field name="doctor_id"/>
+                <field name="patient_id"/>
+                <field name="disease_id"/>
+                <field name="appointment_of_treatment"/>
             </tree>
         </field>
     </record>
@@ -17,18 +21,15 @@
         <field name="model">hr.hospital.diagnosis</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    <button name="action_done" type="object" string="Done" attrs="{'invisible': [('state', '=', 'done')]}"/>
-                </header>
                 <sheet>
                     <group>
-                        <field name="date"/>
-                        <field name="doctor_ids"/>
-                        <field name="patient_ids"/>
+                        <field name="is_intern" invisisble="1"/>
+                        <field name="diagnosis_date"/>
+                        <field name="doctor_id"/>
+                        <field name="patient_id"/>
                         <field name="disease_id"/>
                         <field name="appointment_of_treatment"/>
-                        <field name="state" readonly="1"/>
-                        <field name="comment"/>
+                        <field name="comment" attrs="{'invisible': [('is_intern', '=', 'False')]}"/>
                     </group>
                 </sheet>
             </form>

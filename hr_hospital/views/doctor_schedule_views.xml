@@ -6,9 +6,10 @@
         <field name="model">hr.hospital.doctor.schedule</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="date_appointment" options='{"datepicker": {"daysOfWeekDisabled": [5,6]}}'/>
-                <field name="time_appointment"/>
-                <field name="doctor_assigned_id"/>
+                <field name="visit_date"/>
+                <field name="start_time"/>
+                <field name="doctor_id"/>
+                <field name="shift_end_time" readonly="1" optional="hide"/>
             </tree>
         </field>
     </record>
@@ -21,9 +22,12 @@
                 <header></header>
                 <sheet>
                     <group>
-                        <field name="date_appointment" options='{"datepicker": {"daysOfWeekDisabled": [5,6]}}'/>
-                        <field name="time_appointment"/>
-                        <field name="doctor_assigned_id"/>
+                        <field name="visit_date"/>
+                        <field name="start_time"/>
+                        <field name="shift_end_time" readonly="1"/>
+                        <field name="shift_duration"/>
+                        <field name="day_week" readonly="1"/>
+                        <field name="doctor_id"/>
                     </group>
                 </sheet>
             </form>

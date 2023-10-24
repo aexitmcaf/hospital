@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <record id="hr_hospital_personal_doctor_change" model="ir.ui.view">
+
+    <record id="hr_hospital_personal_doctor_change_form" model="ir.ui.view">
+        <field name="name">hr.hospital.personal.doctor.change.form</field>
+        <field name="model">hr.hospital.personal.doctor.change</field>
+        <field name="arch" type="xml">
+            <form string="History of personal doctor changes">
+                <sheet>
+                    <group>
+                        <field name="change_date" readonly="1"/>
+                        <field name="patient_id" readonly="1"/>
+                        <field name="doctor_id" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_hospital_personal_doctor_change_tree" model="ir.ui.view">
         <field name="name">hr.hospital.personal.doctor.change.tree</field>
         <field name="model">hr.hospital.personal.doctor.change</field>
         <field name="arch" type="xml">
             <tree>
-<!--                <field name="change_date"/>-->
-                <field name="patient_id"/>
-                <field name="doctor_id"/>
+                <field name="change_date" readonly="1"/>
+                <field name="patient_id" readonly="1"/>
+                <field name="doctor_id" readonly="1"/>
             </tree>
         </field>
     </record>
@@ -17,12 +34,13 @@
         <field name="name">Personal doctor changes</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.hospital.personal.doctor.change</field>
-        <field name="view_mode">tree</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="hr_hospital_personal_doctor_change_tree"/>
     </record>
 
-     <menuitem
+    <menuitem
             id="hr_hospital_personal_doctor_change_menu"
             action="hr_hospital_personal_doctor_change_act_window"
-            parent="hr_hospital_menu_root"
+            parent="hr_hospital_main_menu"
             name="History of personal doctor changes" sequence="200"/>
 </odoo>

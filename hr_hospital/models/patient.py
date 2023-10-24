@@ -14,18 +14,21 @@ class Patient(models.Model):
     active = fields.Boolean(
         default=True, )
     date_of_birth = fields.Date(string='Patient date of birth', )
+    age = fields.Integer(compute="_compute_age")
     passport_data = fields.Char(string='Patient Passport', )
     contact_person = fields.Char(string='Contact Person', )
 
-    doctor_id = fields.Many2one(comodel_name='hr.hospital.doctor', )
-    attending_doctor_id = fields.Many2one(comodel_name='hr.hospital.doctor', )
-    personal_doctor_ids = fields.One2many(comodel_name='hr.hospital.personal.doctor.change', inverse_name='patient_id')
-
-    @api.constrains('age')
-    def _check_patient_age(self):
-        for record in self:
-            if record.age <= 0:
-                raise ValidationError(_('Age must be greater than 0'))
+    # doctor_id = fields.Many2one(comodel_name='hr.hospital.doctor', )
+    doctor_id = fields.Many2one(
+        comodel_name='hr.hospital.doctor',
+        inverse_name='patient_id',
+        string='Attending doctor'
+    )
+    personal_doctor_ids = fields.One2many(
+        comodel_name='hr.hospital.personal.doctor.change',
+        inverse_name='patient_id',
+        string="Changed doctors"
+    )
 
     @api.constrains('email')
     def _check_email(self):
@@ -52,6 +55,14 @@ class Patient(models.Model):
     #                                           'patient_id': rec.id})]})
     #             return super().write(vals)
 
+    @api.depends('date_of_birth')
+    def _compute_age(self) -> None:
+        for record in self:
+            today = datetime.today().date()
+            birthday = record.date_of_birth or today
+            diff = ((today.month, today.day) < (birthday.month, birthday.day))
+            record.age = today.year - birthday.year - diff
+
     @api.model
     def create(self, vals_list: dict) -> dict:
         result = super(Patient, self).create(vals_list)
@@ -70,7 +81,22 @@ class Patient(models.Model):
         patients = val or self
         for patient in patients:
             self.env["hr.hospital.personal.doctor.change"].create({
-
+                'change_date': datetime.now(),
                 'patient_id': patient.id,
                 'doctor_id': patient.doctor_id.id,
             })
+
+    def replace_patient_doctor(self) -> dict:
+
+        patients_ids = []
+        for record in self:
+            patients_ids.append(record.id)
+            return {"type": "ir.actions.act_window",
+                     "name": _("Replace Doctor"),
+                     "res_model": "hr.hospital.replace.doctor",
+                     "target": "new",
+                     "views": [[False, "form"]],
+                     "view_mode": "form",
+                     'context': {
+                         'default_patient_ids': patients_ids,
+                     }}

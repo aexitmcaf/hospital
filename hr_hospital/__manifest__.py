@@ -15,6 +15,7 @@
     'data': [
         'security/ir.model.access.csv',
         'data/disease_data.xml',
+        'wizard/replace_doctor.xml',
 
         'views/menu_views.xml',
         'views/patient_views.xml',

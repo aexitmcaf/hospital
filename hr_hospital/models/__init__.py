@@ -6,5 +6,5 @@ from . import (
     diagnosis,
     doctor,
     personal_doctor_change,
-    doctor_schedule
+    doctor_schedule,
 )
