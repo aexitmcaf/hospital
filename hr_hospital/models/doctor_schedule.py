@@ -14,7 +14,7 @@ class DoctorSchedule(models.Model):
     doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
         ondelete="cascade",
-        requiret=True
+        required=True
     )
 
     visit_date = fields.Date(

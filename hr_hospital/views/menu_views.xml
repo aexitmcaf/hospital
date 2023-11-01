@@ -7,17 +7,17 @@
               sequence="300"
     />
 
-    <menuitem id="hr_hospital_main_menu"
-              parent="hr_hospital_menu_root"
-              name="Main"
-              sequence="300"
-    />
+<!--    <menuitem id="hr_hospital_main_menu"-->
+<!--              parent="hr_hospital_menu_root"-->
+<!--              name="Main"-->
+<!--              sequence="300"-->
+<!--    />-->
 
-    <menuitem id="hr_hospital_lists_menu"
-              name="Lists"
-              parent="hr_hospital_menu_root"
+<!--    <menuitem id="hr_hospital_lists_menu"-->
+<!--              name="Lists"-->
+<!--              parent="hr_hospital_menu_root"-->
 
-    />
+<!--    />-->
 
     <menuitem id="hr_hospital_settings_menu_root"
               parent="hr_hospital_menu_root"

@@ -41,6 +41,6 @@
     <menuitem
             id="hr_hospital_personal_doctor_change_menu"
             action="hr_hospital_personal_doctor_change_act_window"
-            parent="hr_hospital_main_menu"
+            parent="hr_hospital_menu_root"
             name="History of personal doctor changes" sequence="200"/>
 </odoo>

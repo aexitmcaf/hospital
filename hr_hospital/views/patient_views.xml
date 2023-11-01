@@ -29,9 +29,23 @@
         <field name="name">hr.hospital.patient.form</field>
         <field name="model">hr.hospital.patient</field>
         <field name="arch" type="xml">
-            <form>
-                <header></header>
+            <form string="Patient">
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(hr_hospital.hr_hospital_visit_act_window)d"
+                                type="action"
+                                string="Visits"
+                                class="oe_highlight"
+                                icon="fa-list-ul"
+                                />
+                        <button name="%(hr_hospital.hr_hospital_create_appointment_act_window)d"
+                                type="action"
+                                string="Appointment"
+                                class="oe_highlight"
+                                icon="fa-check-circle"
+                                context="{'default_patient_id': active_id}"
+                                />
+                    </div>
                     <group>
                         <field name="name"/>
                         <field name="address"/>
