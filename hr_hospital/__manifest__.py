@@ -26,6 +26,8 @@
         'views/diagnosis_views.xml',
         'views/personal_doctor_change_views.xml',
         'views/doctor_schedule_views.xml',
+        'views/analysis_views.xml',
+        'views/analysis_card_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

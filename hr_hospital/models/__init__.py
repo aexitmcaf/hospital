@@ -7,4 +7,5 @@ from . import (
     doctor,
     personal_doctor_change,
     doctor_schedule,
+    analysis,
 )

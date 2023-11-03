@@ -37,28 +37,43 @@
                                 string="Visits"
                                 class="oe_highlight"
                                 icon="fa-list-ul"
-                                />
+                        />
                         <button name="%(hr_hospital.hr_hospital_create_appointment_act_window)d"
                                 type="action"
                                 string="Appointment"
                                 class="oe_highlight"
                                 icon="fa-check-circle"
                                 context="{'default_patient_id': active_id}"
-                                />
+                        />
+                        <button name="%(hr_hospital.hr_hospital_analysis_card_act_window)d"
+                                type="action"
+                                string="Analysis"
+                                class="oe_highlight"
+                                icon="fa-circle"
+                                context="{'default_patient_id': active_id}"
+                        />
                     </div>
                     <group>
-                        <field name="name"/>
-                        <field name="address"/>
-                        <field name="gender"/>
-                        <field name="phone"/>
-                        <field name="email"/>
-                        <field name="image"/>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="address"/>
+                                <field name="gender"/>
+                                <field name="image"/>
+                            </group>
 
-                        <field name="date_of_birth"/>
-                        <field name="age"/>
-                        <field name="passport_data"/>
-                        <field name="contact_person"/>
-                        <field name="doctor_id"/>
+                            <group>
+                                <field name="date_of_birth"/>
+                                <field name="age"/>
+                                <field name="phone"/>
+                                <field name="email"/>
+                                <field name="passport_data"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="contact_person"/>
+                            <field name="doctor_id"/>
+                        </group>
                     </group>
                     <notebook>
                         <page name="doctors_history" string="Personal doctor change">
@@ -66,7 +81,7 @@
                                 <tree create="false" delete="false">
                                     <field name="patient_id"/>
                                     <field name="doctor_id"/>
-<!--                                    <field name="change_date"/>-->
+                                    <!--                                    <field name="change_date"/>-->
                                 </tree>
                             </field>
                         </page>
