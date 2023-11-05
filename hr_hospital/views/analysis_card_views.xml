@@ -27,7 +27,7 @@
         </field>
     </record>
 
-    <record id="analysis_card_view_tree" model="ir.ui.view">
+    <record id="hr_hospital_analysis_card_view_tree" model="ir.ui.view">
         <field name="name">hr_hospital_analysis_card_view_tree</field>
         <field name="model">hr.hospital.analysis.card</field>
         <field name="arch" type="xml">
@@ -79,11 +79,11 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.hospital.analysis.card</field>
         <field name="view_mode">tree,pivot,form</field>
-<!--        <field name="search_view_id" ref="hr_hospital_analysis_card_view_search"/>-->
-        <field name="view_id" ref="analysis_card_view_tree"/>
+        <field name="search_view_id" ref="hr_hospital.analysis_card_view_search"/>
+        <field name="view_id" ref="hr_hospital_analysis_card_view_tree"/>
     </record>
 
     <menuitem id="hr_hospital_analysis_card_menu"
-              name="Analysis card" parent="hr_hospital_analysis_menu"
+              name="Analysis card" parent="hr_hospital_analysis_main"
               action="hr_hospital_analysis_card_act_window" sequence="200"/>
 </odoo>

@@ -17,6 +17,7 @@ class Diagnosis(models.Model):
     diagnosis_date = fields.Date()
     comment = fields.Text()
     is_intern = fields.Boolean(compute="_compute_is_intern")
+    treatment = fields.Text()
 
     def _compute_is_intern(self):
         for rec in self:

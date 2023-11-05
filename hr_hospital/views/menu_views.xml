@@ -13,11 +13,11 @@
 <!--              sequence="300"-->
 <!--    />-->
 
-<!--    <menuitem id="hr_hospital_lists_menu"-->
-<!--              name="Lists"-->
-<!--              parent="hr_hospital_menu_root"-->
-
-<!--    />-->
+    <menuitem id="hr_hospital_analysis_main"
+              name="Analysis"
+              parent="hr_hospital_menu_root"
+              sequence="400"
+    />
 
     <menuitem id="hr_hospital_settings_menu_root"
               parent="hr_hospital_menu_root"

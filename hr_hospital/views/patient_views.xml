@@ -85,6 +85,28 @@
                                 </tree>
                             </field>
                         </page>
+                        <page name="diagnosis_history" string="Diagnosis history">
+                            <field name="diagnosis_ids">
+                                <tree create="false" delete="false">
+                                    <field name="diagnosis_date"/>
+                                    <field name="patient_id"/>
+                                    <field name="doctor_id"/>
+                                    <field name="disease_id"/>
+                                    <field name="treatment" optional="hide"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="analysis_history" string="Analysis history">
+                            <field name="analysis_history">
+                                <tree create="false" delete="false" readonly="1">
+                                    <field name="doctor_id" readonly="1"/>
+                                    <field name="analysis_id" readonly="1"/>
+                                    <field name="analysis_price" readonly="1"/>
+                                    <field name="analysis_date" optional="hide"/>
+                                    <field name="result" optional="hide"/>
+                                </tree>
+                            </field>
+                        </page>
                     </notebook>
                 </sheet>
             </form>

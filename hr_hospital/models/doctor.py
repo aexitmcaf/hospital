@@ -28,7 +28,7 @@ class Doctor(models.Model):
 
     parent_id = fields.Many2one(
         comodel_name="hr.hospital.doctor",
-        domain="[('is_mentor', '=', True",
+        domain="[('is_mentor', '=', True)]",
         string="Mentor"
     )
 

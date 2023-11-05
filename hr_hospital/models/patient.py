@@ -29,6 +29,16 @@ class Patient(models.Model):
         inverse_name='patient_id',
         string="Changed doctors"
     )
+    diagnosis_ids = fields.One2many(
+        comodel_name='hr.hospital.diagnosis',
+        inverse_name='patient_id',
+        string="Diagnosis"
+    )
+    analysis_history = fields.One2many(
+        comodel_name='hr.hospital.analysis.card',
+        inverse_name='patient_id',
+        string="Analysis history"
+    )
 
     @api.constrains('email')
     def _check_email(self):

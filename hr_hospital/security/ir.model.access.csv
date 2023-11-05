@@ -22,3 +22,7 @@ access_hr_hospital_analysis_group_user,access_hr_hospital_analysis_group_user,mo
 
 access_hr_hospital_analysis_card_group_user,access_hr_hospital_analysis_card_group_user,model_hr_hospital_analysis_card,base.group_user,1,1,1,1
 
+access_hr_hospital_add_diagnosis_card_group_user,access_hr_hospital_add_diagnosis_group_user,model_hr_hospital_add_diagnosis,base.group_user,1,1,1,1
+
+
+

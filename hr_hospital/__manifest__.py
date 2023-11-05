@@ -17,6 +17,7 @@
         'data/disease_data.xml',
         'wizard/replace_doctor.xml',
         'wizard/create_appointment.xml',
+        'wizard/add_diagnosis.xml',
 
         'views/menu_views.xml',
         'views/patient_views.xml',
