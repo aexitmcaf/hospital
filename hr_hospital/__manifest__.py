@@ -29,6 +29,8 @@
         'views/doctor_schedule_views.xml',
         'views/analysis_views.xml',
         'views/analysis_card_views.xml',
+        'reports/doctor_templates.xml',
+        'reports/report.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

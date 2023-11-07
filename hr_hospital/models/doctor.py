@@ -15,10 +15,10 @@ class Doctor(models.Model):
     is_intern = fields.Boolean()
     active = fields.Boolean(default=True)
 
-    # patient_ids = fields.One2many(
-    #     comodel_name="hr.hospital.patient",
-    #     inverse_name="doctor_id"
-    # )
+    patient_ids = fields.One2many(
+        comodel_name="hr.hospital.patient",
+        inverse_name="doctor_id"
+    )
 
     state = fields.Selection(
         selection=const.DOCTOR_STATE_LIST,
